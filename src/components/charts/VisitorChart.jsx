@@ -24,15 +24,6 @@ const VisitorChart = () => {
     }));
   };
 
-  const legendItemStyle = (active) => ({
-    display: "flex",
-    alignItems: "center",
-    gap: 6,
-    cursor: "pointer",
-    opacity: active ? 1 : 0.4,
-    transition: "0.2s",
-  });
-
   return (
     <div
       style={{
@@ -50,6 +41,7 @@ const VisitorChart = () => {
           fontWeight: 700,
           fontSize: 16,
           marginBottom: 20,
+          color: "#1A1A2E",
         }}
       >
         Visitor Insights
@@ -62,25 +54,29 @@ const VisitorChart = () => {
             margin={{
               top: 10,
               right: 10,
-              left: -25,
+              left: 0,
               bottom: 0,
             }}
           >
             <CartesianGrid
-              strokeDasharray="3 3"
               vertical={false}
               stroke="#E5E7EB"
+              strokeDasharray="3 3"
             />
 
             <XAxis
               dataKey="month"
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 12 }}
+              tick={{
+                fontSize: 12,
+                fill: "#6B7280",
+              }}
             />
 
             <YAxis
-              width={20}
+              width={45}
+              tickMargin={10}
               domain={[0, 300]}
               ticks={[0, 100, 200, 300]}
               axisLine={false}
@@ -132,13 +128,19 @@ const VisitorChart = () => {
           justifyContent: "center",
           gap: 24,
           marginTop: 16,
-          fontSize: 12,
           flexWrap: "wrap",
+          fontSize: 12,
         }}
       >
         <div
-          style={legendItemStyle(visible.loyal)}
           onClick={() => toggleLine("loyal")}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            cursor: "pointer",
+            opacity: visible.loyal ? 1 : 0.4,
+          }}
         >
           <div
             style={{
@@ -152,8 +154,14 @@ const VisitorChart = () => {
         </div>
 
         <div
-          style={legendItemStyle(visible.new)}
           onClick={() => toggleLine("new")}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            cursor: "pointer",
+            opacity: visible.new ? 1 : 0.4,
+          }}
         >
           <div
             style={{
@@ -167,8 +175,14 @@ const VisitorChart = () => {
         </div>
 
         <div
-          style={legendItemStyle(visible.unique)}
           onClick={() => toggleLine("unique")}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            cursor: "pointer",
+            opacity: visible.unique ? 1 : 0.4,
+          }}
         >
           <div
             style={{

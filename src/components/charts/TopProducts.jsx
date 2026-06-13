@@ -1,4 +1,4 @@
-import { topProducts } from "../data/chartData";
+import { topProducts } from "../../data/chartData";
 
 const TopProducts = () => (
   <div style={{ background: "#fff", borderRadius: 16, padding: 24, boxShadow: "0 2px 12px rgba(0,0,0,0.05)", flex: 1.4 }}>

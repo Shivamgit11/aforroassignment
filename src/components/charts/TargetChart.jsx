@@ -1,11 +1,11 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { targetData } from "../../data/chartData";
-
+import ChartHeadingSection from "./ChartHeadingSection";
 const TargetChart = () => (
   <div style={{ background: "#fff", borderRadius: 16, padding: 24, boxShadow: "0 2px 12px rgba(0,0,0,0.05)", flex: 1 }}>
-    <div style={{ fontWeight: 700, fontSize: 16, color: "#1a1a2e", marginBottom: 16 }}>Target vs Reality</div>
-    <ResponsiveContainer width="100%" height={160}>
-      <BarChart data={targetData} barGap={3}>
+    <ChartHeadingSection Heading="Target vs Reality" />
+    <ResponsiveContainer width="100%" height={192}>
+      <BarChart data={targetData} barGap={3} barSize={10}>
         <XAxis dataKey="month" tick={{ fontSize: 10 }} axisLine={false} tickLine={false} />
         <YAxis hide />
         <Tooltip />
