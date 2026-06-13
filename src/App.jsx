@@ -15,7 +15,7 @@ export default function App() {
   return (
     <div className="app-layout">
       <Sidebar  />
-      <div className="main-area">
+      <div className="main-area overflow-auto">
         <Topbar />
         <div className="page-content">
          <Routes>

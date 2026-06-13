@@ -1,128 +1,52 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Box,
-  InputBase,
-  Avatar,
-  Badge,
-} from "@mui/material";
-
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import {SVG} from "../../utils/Svgs/Svg"
 
-const Topbar = ({ onHandleDrawerToggle }) => {
+const Topbar = () => {
   return (
-    <div
-      position="fixed"
-      elevation={0}
-      sx={{
-        bgcolor: "#fff",
-        color: "#000",
-        borderBottom: "1px solid #EAEAEA",
-      }}
-    >
-      <Toolbar
-        sx={{
-          height: 88,
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        {/* Left Side */}
-        <Box display="flex" alignItems="center" gap={2}>
+    <div className="min-h-[120px] w-full bg-white border-b border-[#EAEAEA] px-8 flex items-center justify-between">
+      {/* Left Side */}
+      <div className="flex items-center gap-2">
+        <h1 className="topbar-heading">Dashboard</h1>
+      </div>
+
+      {/* Center Search */}
+      <div className="w-[513px] max-w-full flex items-center bg-[#F9FAFB] rounded-xl px-4 py-2">
+       {SVG.searchIconSvg}
+
+        <input
+          type="text"
+          placeholder="Search..."
+          className="ml-[8px] flex-1 bg-transparent outline-none text-sm"
+        />
+      </div>
+
+      {/* Right Side */}
+      <div className="flex items-center gap-4">
+        {/* Notification */}
+        
+          {SVG.notificationIconSvg}
+
           
 
-          <Typography
-            variant="h5"
-            sx={{
-              fontWeight: 700,
-            }}
-          >
-            Dashboard
-          </Typography>
-        </Box>
-
-        {/* Center Search */}
-        <Box
-          sx={{
-            width: 450,
-            maxWidth: "100%",
-            display: "flex",
-            alignItems: "center",
-            bgcolor: "#F5F6FA",
-            borderRadius: "12px",
-            px: 2,
-            py: 1,
-          }}
-        >
-          <SearchIcon sx={{ color: "#888" }} />
-
-          <InputBase
-            placeholder="Search..."
-            sx={{
-              ml: 1,
-              flex: 1,
-            }}
+        {/* Profile */}
+        <div className="flex items-center gap-3 cursor-pointer">
+          <img
+            src="https://i.pravatar.cc/150?img=12"
+            alt="profile"
+            className="w-12 h-12 rounded-xl object-cover"
           />
-        </Box>
 
-        {/* Right Side */}
-        <Box display="flex" alignItems="center" gap={2}>
-          <IconButton
-            sx={{
-              bgcolor: "#FFF4E5",
-            }}
-          >
-            <Badge color="error" variant="dot">
-              <NotificationsNoneIcon />
-            </Badge>
-          </IconButton>
+          <div>
+            <p className="text-sm font-semibold text-black">Musfiq</p>
+            <p className="text-xs text-gray-500">Admin</p>
+          </div>
 
-          <Box
-            display="flex"
-            alignItems="center"
-            gap={1.5}
-            sx={{
-              cursor: "pointer",
-            }}
-          >
-            <Avatar
-              src="https://i.pravatar.cc/150?img=12"
-              sx={{
-                width: 48,
-                height: 48,
-              }}
-            />
-
-            <Box>
-              <Typography
-                sx={{
-                  fontWeight: 600,
-                  fontSize: 14,
-                }}
-              >
-                Musfiq
-              </Typography>
-
-              <Typography
-                sx={{
-                  fontSize: 12,
-                  color: "#888",
-                }}
-              >
-                Admin
-              </Typography>
-            </Box>
-
-            <KeyboardArrowDownIcon />
-          </Box>
-        </Box>
-      </Toolbar>
+          <KeyboardArrowDownIcon />
+        </div>
+      </div>
     </div>
   );
 };
