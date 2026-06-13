@@ -4,7 +4,7 @@ import { revenueData } from "../../data/chartData";
 const RevenueChart = () => (
   <div style={{ background: "#fff", borderRadius: 16, padding: 24, boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}>
     <div style={{ fontWeight: 700, fontSize: 16, color: "#1a1a2e", marginBottom: 16 }}>Total Revenue</div>
-    <ResponsiveContainer width="100%" height={180}>
+    <ResponsiveContainer width="100%" height={250}>
       <BarChart data={revenueData} barGap={4}>
         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
         <XAxis dataKey="day" tick={{ fontSize: 11 }} axisLine={false} tickLine={false} />

@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  Paper,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  Stack,
-  Button,
-} from "@mui/material";
+import ChartHeadingSection from "./ChartHeadingSection";
+import { SVG } from "../../utils/Svgs/Svg";
 
 const sales = [
   {
@@ -16,7 +9,7 @@ const sales = [
     growth: "+8%",
     bgColor: "#FFE2E5",
     iconBackgroundColor: "#FA5A7D",
-    icon: "💰",
+    icon: SVG.salesIconSvg,
   },
   {
     value: "300",
@@ -24,94 +17,74 @@ const sales = [
     growth: "+5%",
     bgColor: "#FFF4DE",
     iconBackgroundColor: "#FF947A",
-    icon: "🛒",
+    icon: SVG.totalOrderIconSvg,
   },
   {
     value: "5",
-    label: "Product Sold",
+    label: "Sold",
     growth: "+1.2%",
     bgColor: "#DCFCE7",
     iconBackgroundColor: "#3CD856",
-    icon: "📦",
+    icon: SVG.soldIconSvg,
   },
   {
     value: "8",
-    label: "New Customers",
+    label: "Customers",
     growth: "+0.5%",
     bgColor: "#F3E8FF",
     iconBackgroundColor: "#BF83FF",
-    icon: "👤",
+    icon: SVG.customerIconSvg,
   },
 ];
 
 const SalesMap = () => {
   return (
-    <Paper sx={{ p: 4 }}>
-      {/* Header */}
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        mb={4}
-      >
-        <div>
-          <Typography variant="h5" fontWeight={600}>
-            Today's Sales
-          </Typography>
+    <div className="bg-white p-8 rounded-2xl">
+      <ChartHeadingSection
+        Heading="Today's Sales"
+        Subheading="Sales Summary"
+        SecondSection={<div
+  className="inline-flex h-10 items-center justify-center gap-2 px-4 border border-gray-300 rounded-lg bg-white text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors cursor-pointer"
+>
+  <div className="flex items-center justify-center">
+    {SVG.uploadIconSvg}
+  </div>
 
-          <Typography color="text.secondary">
-            Sales Summary
-          </Typography>
-        </div>
+  <span className="flex items-center justify-center">
+    Export
+  </span>
+</div>}
+      />
 
-        <Button variant="outlined">Export</Button>
-      </Stack>
-
-      {/* Cards */}
-      <Grid container spacing={3}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
         {sales.map((item) => (
-          <Grid size={{ xs: 12, sm: 6, md: 3 }} key={item.label}>
-            <Card
-              sx={{
-                borderRadius: 4,
-                bgcolor: item.bgColor,
-                height: "100%",
-              }}
+          <div
+            key={item.label}
+            className="rounded-2xl p-[20px] h-fit"
+            style={{ backgroundColor: item.bgColor }}
+          >
+            <div
+              className="w-10 h-10 rounded-full flex items-center justify-center text-white text-[20px] mb-4"
+              style={{ backgroundColor: item.iconBackgroundColor }}
             >
-              <CardContent>
-                <Stack
-                  alignItems="center"
-                  justifyContent="center"
-                  sx={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: "50%",
-                    bgcolor: item.iconBackgroundColor,
-                    mb: 2,
-                    color: "#fff",
-                    fontSize: 20,
-                  }}
-                >
-                  {item.icon}
-                </Stack>
+              {item.icon}
+            </div>
 
-                <Typography variant="h4" fontWeight={700} mb={1}>
-                  {item.value}
-                </Typography>
+            <h2 className="chart-sales-m-head">
+              {item.value}
+            </h2>
 
-                <Typography variant="body1" fontWeight={600} mb={1}>
-                  {item.label}
-                </Typography>
+            <p className="charts-sales-b-head">
+              {item.label}
+            </p>
 
-                <Typography variant="caption" color="text.secondary">
-                  Last day {item.growth}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+            <p className="charts-sales-b-des">
+              Last day {item.growth}
+            </p>
+          </div>
         ))}
-      </Grid>
-    </Paper>
+      </div>
+    </div>
   );
 };
 

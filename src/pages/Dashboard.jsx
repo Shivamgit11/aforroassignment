@@ -15,39 +15,24 @@ const statCards = [
 ];
 
 const Dashboard = () => (
-  <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 20 }}>
+  <div className="grid grid-cols-10">
 
     {/* Row 1: Sales Summary + Visitor Insights */}
-    <div style={{ display: "flex", gap: 20 }}>
+   
       {/* Sales Summary */}
-      <div style={{
-        flex: 1.6, background: "#fff", borderRadius: 16, padding: 24,
-        boxShadow: "0 2px 12px rgba(0,0,0,0.05)", border: "2px solid #e8e4ff",
-      }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 }}>
-          <div>
-            <div style={{ fontWeight: 700, fontSize: 16, color: "#1a1a2e" }}>Today's Sales</div>
-            <div style={{ fontSize: 12, color: "#999" }}>Sales Summary</div>
-          </div>
-          <button style={{
-            background: "#f4f6fb", border: "none", borderRadius: 8,
-            padding: "7px 14px", fontSize: 12, cursor: "pointer", color: "#555",
-          }}>↑ Export</button>
-        </div>
-        <div style={{ display: "flex", gap: 14 }}>
-          {statCards.map(c => <StatCard key={c.label} {...c} />)}
-        </div>
-      </div>
+      <div className="col-span-6"><SalesMap /></div>
+      <div className="col-span-4"><VisitorChart /></div>
+     
 
-      <VisitorChart />
-    </div>
+      
+
 
     {/* Row 2: Revenue + Satisfaction + Target */}
-    <div style={{ display: "flex", gap: 20 }}>
-      <div style={{ flex: 1.4 }}><RevenueChart /></div>
-      <SatisfactionChart />
-      <TargetChart />
-    </div>
+   
+      <div className="col-span-5"><RevenueChart />  </div>
+      <div className="col-span-3"><SatisfactionChart /> </div>
+     <div className="col-span-2"> <TargetChart /></div>
+
 
     {/* Row 3: Top Products + Map + Volume */}
     <div style={{ display: "flex", gap: 20 }}>

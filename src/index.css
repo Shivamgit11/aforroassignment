@@ -183,3 +183,49 @@ body {
     font-family: Poppins, Open Sans, Epilogue, sans-serif;
     color: #151D48;
 }
+
+.charts-heading {
+      margin: 0;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-family: Poppins, Open Sans, Epilogue, sans-serif;
+    margin-bottom: 4px;
+}
+
+.charts-subheading  {
+      margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.875;
+    font-family: Poppins, Open Sans, Epilogue, sans-serif;
+    color: #737791;
+}
+.chart-sales-m-head {
+      margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.33;
+    font-family: Poppins, Open Sans, Epilogue, sans-serif;
+    color: #151D48;
+    margin-bottom: 8px;
+}
+
+.charts-sales-b-head {
+      margin: 0;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: Poppins, Open Sans, Epilogue, sans-serif;
+    color: #425166;
+    margin-bottom: 8px;
+}
+
+.charts-sales-b-des {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1.33;
+    font-family: Poppins, Open Sans, Epilogue, sans-serif;
+    color: #4079ED;
+}
