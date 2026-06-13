@@ -86,35 +86,23 @@ const DataTable = () => {
       flex: 1,
       minWidth: 140,
       renderCell: (params) => {
-        let color = "";
+  const colorMap = {
+    Low: "#E8F5E9",
+    Medium: "#E3F2FD",
+    High: "#FFEBEE",
+    Critical: "#FFF3E0",
+  };
 
-        switch (params.value) {
-          case "Low":
-            color = "#E8F5E9";
-            break;
-          case "Medium":
-            color = "#E3F2FD";
-            break;
-          case "High":
-            color = "#FFEBEE";
-            break;
-          case "Critical":
-            color = "#FFF3E0";
-            break;
-          default:
-            color = "#F5F5F5";
-        }
-
-        return (
-          <Chip
-            label={params.value}
-            size="small"
-            sx={{
-              backgroundColor: color,
-            }}
-          />
-        );
-      },
+  return (
+    <Chip
+      label={params.value}
+      size="small"
+      sx={{
+        backgroundColor: colorMap[params.value] || "#F5F5F5",
+      }}
+    />
+  );
+},
     },
     {
       field: "budget",
