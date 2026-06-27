@@ -1,7 +1,6 @@
 
 
 
-import { useState } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Topbar from "./components/Topbar/Topbar";
 import Dashboard from "./pages/Dashboard";
@@ -10,7 +9,6 @@ import { Routes, Route } from "react-router-dom";
 import "./index.css";
 
 export default function App() {
-  const [activeNav, setActiveNav] = useState("Dashboard");
 
   return (
     <div className="app-layout">

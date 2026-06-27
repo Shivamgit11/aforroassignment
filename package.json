@@ -1,5 +1,5 @@
 {
-  "name": "aforro-assignment",
+  "name": "NKSSOFT-assignment",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -17,6 +17,7 @@
     "@mui/material": "^9.1.1",
     "@mui/x-data-grid": "^9.5.0",
     "@tailwindcss/vite": "^4.3.0",
+    "@xyflow/react": "^12.11.1",
     "echarts": "^6.1.0",
     "echarts-for-react": "^3.0.6",
     "lucide-react": "^1.17.0",

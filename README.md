@@ -1,4 +1,4 @@
-# Aforro Assignment
+# NKSSOFT Assignment
 
 A modern React dashboard application built with Vite, Material UI, Tailwind CSS, Recharts, and ECharts.
 
@@ -41,7 +41,7 @@ git clone <repository-url>
 Navigate to the project directory:
 
 ```bash
-cd aforro-assignment
+cd NKSSOFT-assignment
 ```
 
 Install dependencies:
